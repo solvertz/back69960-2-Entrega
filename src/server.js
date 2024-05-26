@@ -1,11 +1,17 @@
 import express from 'express'; 
+import productsRouter from './routes/products.router.js';
+import cartsRouter from './routes/carts.router.js';
+
 
 const app = express();
 
+//middleware 
 
-app.get("/", (req,res)=>{
-    res.send("Bienvenidos a mi primer proyecto!!")
-})
+app.use(express.json()); // para recibir datos json 
+app.use(express.urlencoded({extended: true})); // mid para datos que se envian por params
+
+app.use("/api/cart", cartsRouter); 
+app.use("/api/products", productsRouter)
 
 
 
