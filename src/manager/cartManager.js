@@ -70,7 +70,7 @@ export default class CartManager {
             console.log(productExist);
             if(!productExist) return "el producto no existe";
             
-            const existProdInCart = cartExist.products.find((product)=>product.id === Number(idProduct));
+            const existProdInCart = cartExist.products.find((p)=>p.product === Number(idProduct));
             console.log(`existProdInCart ${existProdInCart}`); //devuelve undefined ?????
             if(!existProdInCart) {
                 const product = {
