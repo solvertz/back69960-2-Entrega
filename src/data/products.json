@@ -1,35 +1,5 @@
 [
 	{
-		"id": 1,
-		"title": "caramelo cafe",
-		"description": "Cafe premium",
-		"code": "1235A",
-		"price": "2000",
-		"stock": 5,
-		"category": "golosinas",
-		"thumbnails": "caramelo.img"
-	},
-	{
-		"id": 2,
-		"title": "caramelo cafe",
-		"description": "Cafe premium",
-		"code": "1235A",
-		"price": "2000",
-		"stock": 5,
-		"category": "golosinas",
-		"thumbnails": "caramelo.img"
-	},
-	{
-		"id": 3,
-		"title": "caramelo cafe",
-		"description": "Cafe premium",
-		"code": "1235A",
-		"price": "2000",
-		"stock": 5,
-		"category": "golosinas",
-		"thumbnails": "caramelo.img"
-	},
-	{
 		"id": 4,
 		"title": "caramelo cafe",
 		"description": "Cafe premium",
@@ -68,5 +38,56 @@
 		"stock": 5,
 		"category": "golosinas",
 		"thumbnails": "caramelo.img"
+	},
+	{
+		"id": 8,
+		"title": "Coca-cola ",
+		"description": "Cero Azucar",
+		"code": "45A",
+		"price": "1500",
+		"stock": 1,
+		"category": "Almacen",
+		"thumbnails": "coca.img"
+	},
+	{
+		"id": 2,
+		"title": "caramelo cafe",
+		"description": "Cafe premium",
+		"code": "1235A",
+		"price": "2000",
+		"stock": 5,
+		"category": "golosinas",
+		"thumbnails": "caramelo.img"
+	},
+	{
+		"id": 1,
+		"title": "caramelo cafe",
+		"description": "Cafe premium",
+		"code": "1235A",
+		"price": 1500,
+		"stock": 15,
+		"category": "golosinas",
+		"thumbnails": "caramelo.img"
+	},
+	{
+		"id": 2,
+		"title": "Sprite ",
+		"description": "Cero Azucar",
+		"code": "45S",
+		"price": "1500",
+		"stock": 1,
+		"category": "Almacen",
+		"thumbnails": "sprite.img"
+	},
+	{
+		"id": 3,
+		"status": true,
+		"title": "Agua Tónica ",
+		"description": "Cero Azucar",
+		"code": "45M",
+		"price": "1500",
+		"stock": 1,
+		"category": "Almacen",
+		"thumbnails": "tonica.img"
 	}
 ]

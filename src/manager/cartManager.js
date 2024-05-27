@@ -48,7 +48,8 @@ export default class CartManager {
     }
     async getCartById(id){
         try {
-            const cart = this.carts.find(cart => cart.id === id);
+            const cart = this.carts.find(cart => cart.id === Number(id));
+            console.log(cart)
             if(!cart) return null;
             return cart;
             

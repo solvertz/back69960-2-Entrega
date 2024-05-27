@@ -1,6 +1,5 @@
 import { Router } from "express";
 
-
 const router = Router(); 
 
 import ProductManager from '../manager/productManager.js'; 
@@ -41,7 +40,7 @@ router.get("/:id", async(req, res)=>{
 
 //obtener datos x body 
 // ver la validacion de los datos 
-//-------------------------------------------no funciona crear products 
+
 router.post("/", productValidator, async(req, res)=>{
     try {
         console.log(req.body)

@@ -56,8 +56,10 @@ class ProductManager {
         }else{ 
             product.id = 1;
         }
+        const status = "";
         const newProduct = {
             id: newId,
+            status: true,
             ...product
         }
         console.log(newProduct);
