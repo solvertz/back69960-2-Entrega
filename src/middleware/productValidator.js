@@ -8,6 +8,7 @@ export const productValidator = (req, res, next)=>{
         req.body.thumbnails === undefined){
             res.status(400).json({msg: "Ingresar todos datos"});
         }else{
+            req.body.status = true; 
             next();
         }
 }
