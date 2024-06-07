@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    background-color: darkslateblue;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(216, 98, 144);
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    width: 400px;
+    margin: auto;
+    margin-top: 20px;
+}

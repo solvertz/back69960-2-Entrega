@@ -38,15 +38,14 @@ export default class CartManager {
             newId = 1;
         }
 
-       /*  const cart = {
+        const cart = {
             id: newId,
             products: []
-        } */
-        this.carts.push({id: newId, products: [] });
+        } 
+        this.carts.push(cart);
         
         try {
             this.saveCarts();
-            /* await fs.promises.writeFile(this.path, JSON.stringify(this.carts, null, "\t"));  */
             console.log("carrito creado con éxito")
             return cart
             
@@ -78,15 +77,9 @@ export default class CartManager {
             if(!productExist) return "el producto no existe";
             const existProdInCart = cartExist.products.find((p)=>p.product === Number(idProduct));
             if(!existProdInCart) {
-               /*  const product = {
-                    product: idProduct,
-                    quantity: 1
-                }; */
                 cartExist.products.push({product: idProduct,quantity: 1});
-             // en vez de crear un objeto puedo pasarlo dirctamente 
             }else existProdInCart.quantity += 1;
             this.saveCarts()
-            /* await fs.promises.writeFile(this.path, JSON.stringify(this.carts, null, "\t"));  */
             console.log("se agregó el producto al carrito");
             return cartExist; // Devuelve el carrito actualizado
             

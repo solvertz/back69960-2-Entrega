@@ -1,0 +1,20 @@
+<h2>Hola soy el home y tengo q renderizar la lista de prod </h2>
+
+{{#if products.length }}
+    {{#each products }} 
+    <div id="container ">   
+      
+        <p>Title: {{this.title}}</p>
+        <p>Price: $ {{this.price}}</p>
+        <p>Description: {{this.description}} </p>
+        <p>Stock: {{this.stock}}</p>
+        <p>Thumbnails: {{this.Thumbnails}}</p>
+        <p>Status: {{this.Status}}</p>
+        <p>Code: {{this.Code}}</p>
+        
+    </div>
+    {{/each}}
+{{else}}
+    <p>No hay productos</p>
+    
+{{/if}}
