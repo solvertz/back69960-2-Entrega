@@ -4,6 +4,12 @@ import cartsRouter from './routes/carts.router.js';
 import handlebars  from 'express-handlebars';
 import viewRouter from './routes/view.router.js'
 import { __dirname } from './path.js'; 
+import { Server } from 'socket.io'
+import ProductManager from './manager/productManager.js';
+
+const productManager = new ProductManager("./src/data/products.json");
+
+
 
 
 const app = express();
@@ -26,5 +32,50 @@ app.set('views', `${__dirname}/views`); // ubicación de la carpeta para las vis
 
 app.use('/', viewRouter); //enrutador de vistas
 
+
+
+
+
 const PORT = 8080; 
-app.listen(PORT, ()=>console.log(`servidor ok en http://localhost:${PORT}`)); 
+
+const httpServer = app.listen(PORT, ()=>console.log(`servidor ok en http://localhost:${PORT}`)); 
+
+const socketServer = new Server(httpServer);
+
+socketServer.on('connection',(socket) => {
+    socketServer.on('connection', async(socket) => {
+        
+        console.log(`Nuevo usuario conectado:  ${socket.id}`);
+        socket.emit('products', await productManager.getProducts());
+    });
+
+   
+
+
+    socket.on('newProduct', async(product) => {
+        try {
+            await productManager.addProduct(product);
+            socket.emit('products', await productManager.getProducts());
+        } catch (error) {
+            console.error(`error en la creación del producto ${error.mensaje}`);
+        }
+    }); 
+
+    socket.on('deleteProduct', async(id) =>{
+        console.log (typeof(id)); 
+        console.log(id);
+        try {
+            await productManager.deleteProducts(Number(id));
+            socket.emit('products', await productManager.getProducts());
+        } catch (error) {
+            console.error(`error en la eliminación del producto ${error.mensaje}`);
+        }
+    })
+
+
+    socket.on('disconnect', () => {
+        console.log(`Usuario desconectado: ${socket.id}`)
+    });
+    
+
+})

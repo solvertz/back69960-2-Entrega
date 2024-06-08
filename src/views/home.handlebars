@@ -2,15 +2,15 @@
 
 {{#if products.length }}
     {{#each products }} 
-    <div id="container ">   
-      
+    <div class="container ">   
+        <p>ID: {{this.id}}</p>
         <p>Title: {{this.title}}</p>
         <p>Price: $ {{this.price}}</p>
         <p>Description: {{this.description}} </p>
         <p>Stock: {{this.stock}}</p>
-        <p>Thumbnails: {{this.Thumbnails}}</p>
-        <p>Status: {{this.Status}}</p>
-        <p>Code: {{this.Code}}</p>
+        <p>Thumbnails: {{this.thumbnails}}</p>
+        <p>Status: {{this.status}}</p>
+        <p>Code: {{this.code}}</p>
         
     </div>
     {{/each}}

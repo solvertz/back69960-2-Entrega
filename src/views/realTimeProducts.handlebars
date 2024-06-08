@@ -1,1 +1,27 @@
-<h1>LISTA EN TIEMPO REAL </h1>
+<h3>LISTA EN TIEMPO REAL </h3>
+
+
+<form id="form">
+    <div class="container">
+        <input type="text"  id="title" placeholder="Ingrese un Titulo" required>
+        <input type="text"  id="description" placeholder="Ingrese una descripcion"required>
+        <input type="number" id="price" placeholder="Ingrese un precio" required>
+        <input type="number" id="stock" placeholder="Ingrese un stock" required>
+        <input type="text" id="category" placeholder="Ingrese una categoria" required>
+        <input type="text" id="status" placeholder="Ingrese el status" required>
+        <input type="text" id="code" placeholder="Ingrese el código" required>
+        <input type="file" id="img" placeholder="Ingrese una imagen">
+        <input type="submit" id="btnCrear" value="Crear Producto ">
+
+    </div>
+    
+
+</form>
+
+<p id="productsList">Lista de productos </p>
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script src="js/index.js"></script>

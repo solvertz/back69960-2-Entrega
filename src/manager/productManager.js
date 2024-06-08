@@ -62,16 +62,17 @@ class ProductManager {
     }
    
     async deleteProducts(idProduct){
+        console.log(idProduct);
         try {
-            const productsExist = this.getProductById(idProduct); 
+            const productsExist = await this.getProductById(idProduct); 
+
             if (productsExist){
             const newArray = this.products.filter((product)=>product.id !== Number(idProduct));
             await fs.promises.writeFile(this.path, JSON.stringify(newArray, null, "\t"));
-            console.log("Prodducto eliminado exitosamente! ")
+            console.log("Producto eliminado exitosamente! ")
             return productsExist  //retorna el producto borrado 
-
             }else return console.log("No se encontro el producto "); 
-            
+        
         }catch (error) {
             console.log(error); 
         }  
