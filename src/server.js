@@ -9,19 +9,11 @@ import ProductManager from './manager/productManager.js';
 
 const productManager = new ProductManager("./src/data/products.json");
 
-
-
-
 const app = express();
-
-//middleware 
 
 app.use(express.json()); // para recibir datos json 
 app.use(express.urlencoded({extended: true})); // mid para datos que se envian por params
-
 app.use(express.static(`${__dirname}/public`)); // si no lo agrego no funcionan los style
-
-
 
 app.use("/api/cart", cartsRouter); 
 app.use("/api/products", productsRouter)
@@ -33,9 +25,6 @@ app.set('views', `${__dirname}/views`); // ubicación de la carpeta para las vis
 app.use('/', viewRouter); //enrutador de vistas
 
 
-
-
-
 const PORT = 8080; 
 
 const httpServer = app.listen(PORT, ()=>console.log(`servidor ok en http://localhost:${PORT}`)); 
@@ -44,14 +33,9 @@ const socketServer = new Server(httpServer);
 
 socketServer.on('connection',(socket) => {
     socketServer.on('connection', async(socket) => {
-        
         console.log(`Nuevo usuario conectado:  ${socket.id}`);
-        socket.emit('products', await productManager.getProducts());
-    });
-
-   
-
-
+    })
+    
     socket.on('newProduct', async(product) => {
         try {
             await productManager.addProduct(product);
@@ -65,7 +49,7 @@ socketServer.on('connection',(socket) => {
         console.log (typeof(id)); 
         console.log(id);
         try {
-            await productManager.deleteProducts(Number(id));
+            await productManager.deleteProducts(id)
             socket.emit('products', await productManager.getProducts());
         } catch (error) {
             console.error(`error en la eliminación del producto ${error.mensaje}`);

@@ -1,15 +1,5 @@
 [
 	{
-		"id": 5,
-		"title": "caramelo cafe",
-		"description": "Cafe premium",
-		"code": "1235A",
-		"price": "2000",
-		"stock": 5,
-		"category": "golosinas",
-		"thumbnails": "caramelo.img"
-	},
-	{
 		"id": 8,
 		"title": "Coca-cola ",
 		"description": "Cero Azucar",
@@ -54,202 +44,6 @@
 		"id": 8,
 		"status": "true",
 		"title": "Mayonesa Natura",
-		"description": "Natura 250gr",
-		"price": "1500",
-		"stock": "3",
-		"category": "Almacen",
-		"code": "mayo33"
-	},
-	{
-		"id": 9,
-		"status": true
-	},
-	{
-		"id": 10,
-		"status": "",
-		"title": "",
-		"description": "",
-		"price": "",
-		"stock": "",
-		"category": "",
-		"code": ""
-	},
-	{
-		"id": 11,
-		"status": true
-	},
-	{
-		"id": 12,
-		"status": "",
-		"title": "",
-		"description": "",
-		"price": "",
-		"stock": "",
-		"category": "",
-		"code": ""
-	},
-	{
-		"id": 13,
-		"status": true
-	},
-	{
-		"id": 14,
-		"status": "true",
-		"title": "dff",
-		"description": "ddf",
-		"price": "452",
-		"stock": "2",
-		"category": "Almacen",
-		"code": "mayo33"
-	},
-	{
-		"id": 15,
-		"status": true
-	},
-	{
-		"id": 16,
-		"status": "true",
-		"title": "khkh",
-		"description": "hff",
-		"price": "55",
-		"stock": "2",
-		"category": "Almacen",
-		"code": "ñhu"
-	},
-	{
-		"id": 17,
-		"status": true
-	},
-	{
-		"id": 18,
-		"status": "true",
-		"title": "khkh",
-		"description": "hff",
-		"price": "55",
-		"stock": "2",
-		"category": "Almacen",
-		"code": "ñhu"
-	},
-	{
-		"id": 19,
-		"status": true
-	},
-	{
-		"id": 20,
-		"status": "",
-		"title": "",
-		"description": "",
-		"price": "",
-		"stock": "",
-		"category": "",
-		"code": ""
-	},
-	{
-		"id": 21,
-		"status": true
-	},
-	{
-		"id": 22,
-		"status": "true",
-		"title": "fgf",
-		"description": "fd",
-		"price": "44",
-		"stock": "2",
-		"category": "Almacen",
-		"code": "25k"
-	},
-	{
-		"id": 23,
-		"status": true
-	},
-	{
-		"id": 24,
-		"status": "true",
-		"title": "fgf",
-		"description": "fd",
-		"price": "44",
-		"stock": "2",
-		"category": "Almacen",
-		"code": "25k"
-	},
-	{
-		"id": 25,
-		"status": true
-	},
-	{
-		"id": 26,
-		"status": "false",
-		"title": "fgf",
-		"description": "fd",
-		"price": "44",
-		"stock": "2",
-		"category": "Almacen",
-		"code": "25k"
-	},
-	{
-		"id": 27,
-		"status": true
-	},
-	{
-		"id": 28,
-		"status": "false",
-		"title": "fgf",
-		"description": "fd",
-		"price": "44",
-		"stock": "2",
-		"category": "Almacen",
-		"code": "25k"
-	},
-	{
-		"id": 29,
-		"status": true
-	},
-	{
-		"id": 30,
-		"status": "true",
-		"title": "ghf",
-		"description": "dgfd",
-		"price": "1",
-		"stock": "1",
-		"category": "Almacen",
-		"code": "mayo33"
-	},
-	{
-		"id": 31,
-		"status": true
-	},
-	{
-		"id": 32,
-		"status": true
-	},
-	{
-		"id": 33,
-		"status": true
-	},
-	{
-		"id": 34,
-		"status": true
-	},
-	{
-		"id": 35,
-		"status": true
-	},
-	{
-		"id": 36,
-		"status": true
-	},
-	{
-		"id": 37,
-		"status": true
-	},
-	{
-		"id": 38,
-		"status": true
-	},
-	{
-		"id": 39,
-		"status": "true",
-		"title": "Mostaza",
 		"description": "Natura 250gr",
 		"price": "1500",
 		"stock": "3",
@@ -595,5 +389,211 @@
 		"stock": "3",
 		"category": "Almacen",
 		"code": "mata3"
+	},
+	{
+		"id": 5,
+		"title": "caramelo cafe",
+		"description": "Cafe premium",
+		"code": "1235A",
+		"price": 3000,
+		"stock": 20,
+		"category": "golosinas",
+		"thumbnails": "caramelo.img"
+	},
+	{
+		"id": 6,
+		"status": true,
+		"title": "Sal",
+		"description": "Dos Anclas ",
+		"code": "1232",
+		"price": 300,
+		"stock": 20,
+		"category": "almacen",
+		"thumbnails": [
+			"sal.img"
+		]
+	},
+	{
+		"id": 7,
+		"status": true,
+		"title": "Sal",
+		"description": "Dos Anclas ",
+		"code": "1232",
+		"price": 300,
+		"stock": 20,
+		"category": "almacen",
+		"thumbnails": [
+			"sal.img"
+		],
+		"sku": 123
+	},
+	{
+		"id": 8,
+		"status": true,
+		"title": "Sal",
+		"description": "Dos Anclas ",
+		"code": "1232",
+		"price": 300,
+		"stock": 20,
+		"category": "almacen",
+		"sku": 123,
+		"thumbnails": [
+			"sal.img"
+		]
+	},
+	{
+		"id": 9,
+		"status": true,
+		"title": "Sal",
+		"description": "Dos Anclas ",
+		"code": "1232",
+		"price": 300,
+		"stock": 20,
+		"category": "almacen",
+		"sku": 123,
+		"thumbnails": [
+			"sal.img"
+		]
+	},
+	{
+		"id": 3,
+		"status": true,
+		"title": "Sal",
+		"description": "Dos Anclas ",
+		"code": "1232",
+		"price": 300,
+		"stock": 20,
+		"category": "almacen",
+		"sku": 123,
+		"thumbnails": [
+			"sal.img"
+		]
+	},
+	{
+		"id": 3,
+		"status": true,
+		"title": "Sal",
+		"description": "Dos Anclas ",
+		"code": "1232",
+		"price": 300,
+		"stock": 20,
+		"category": "almacen",
+		"sku": 123,
+		"thumbnails": [
+			"sal.img"
+		]
+	},
+	{
+		"id": 4,
+		"status": true,
+		"title": "Sal",
+		"description": "tres Anclas ",
+		"code": "hjh",
+		"price": 1300,
+		"stock": 30,
+		"category": "almacen",
+		"thumbnails": [
+			"sal.img"
+		]
+	},
+	{
+		"id": 5,
+		"title": "Chocolate Nesquik",
+		"description": "Chocolate para taza 300gr",
+		"price": "3000",
+		"stock": "3",
+		"category": "Almacen",
+		"status": "true",
+		"code": "nes23"
+	},
+	{
+		"id": 6,
+		"title": "fdsf",
+		"description": "sfd",
+		"price": "5",
+		"stock": "6",
+		"category": "Almacen",
+		"status": "true",
+		"code": "gfgd"
+	},
+	{
+		"id": 7,
+		"title": "hgjjty",
+		"description": "ghgf",
+		"price": "125",
+		"stock": "3",
+		"category": "Almacen",
+		"status": "false",
+		"code": "475hg"
+	},
+	{
+		"id": 8,
+		"title": "sfsdf",
+		"description": "sdf",
+		"price": "123",
+		"stock": "3",
+		"category": "Almacen",
+		"status": "true",
+		"code": "25k"
+	},
+	{
+		"id": 9,
+		"title": "fsd",
+		"description": "fd",
+		"price": "452",
+		"stock": "3",
+		"category": "Almacen",
+		"status": "true",
+		"code": "ñhu"
+	},
+	{
+		"id": 10,
+		"title": "aaa",
+		"description": "aaa",
+		"price": "444",
+		"stock": "22",
+		"category": "Almacen",
+		"status": "true",
+		"code": "819037"
+	},
+	{
+		"id": 11,
+		"title": "bbb",
+		"description": "bbb",
+		"price": "55",
+		"stock": "5",
+		"category": "Almacen",
+		"status": "false",
+		"code": "asm"
+	},
+	{
+		"id": 12,
+		"title": "ccc",
+		"description": "ccc",
+		"price": "44225",
+		"stock": "25",
+		"category": "Almacen",
+		"status": "true",
+		"code": "25k"
+	},
+	{
+		"id": 13,
+		"title": "ddd",
+		"description": "ddd",
+		"price": "74",
+		"stock": "4",
+		"category": "Almacen",
+		"status": "true",
+		"code": "ñhu"
+	},
+	{
+		"id": 14,
+		"title": "fg",
+		"description": "dfg",
+		"price": "4",
+		"stock": "4",
+		"category": "Almacen",
+		"status": "true",
+		"code": "mayo33"
 	}
 ]

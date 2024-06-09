@@ -1,6 +1,5 @@
 import fs from 'fs';
 
-
 class ProductManager {
     constructor(path){
         this.path = path;
@@ -28,7 +27,7 @@ class ProductManager {
         const status = "";
         const newProduct = {
             id: newId,
-            status: true,
+            //status: true,
             ...product
         }
         console.log(newProduct);
@@ -42,11 +41,9 @@ class ProductManager {
             return newProduct;
         }catch(error){
             console.error(`Error al escribir el archivo`,error); 
-
         }
-    
     } 
-     // no hace falta leer el archivo por que se guarda en el array y en el archivo devolvemos el array 
+     
     getProducts(limit){
         const productLimit = this.products
         if(limit) return productLimit.slice(0, limit); 
@@ -65,7 +62,6 @@ class ProductManager {
         console.log(idProduct);
         try {
             const productsExist = await this.getProductById(idProduct); 
-
             if (productsExist){
             const newArray = this.products.filter((product)=>product.id !== Number(idProduct));
             await fs.promises.writeFile(this.path, JSON.stringify(newArray, null, "\t"));
@@ -83,18 +79,9 @@ class ProductManager {
         try {
             let productsExist = this.getProductById(idProduct); 
             if (!productsExist) return "el producto no existe";
-            //lista de propiedades permitidas poara un producto 
-            const updatedProduct = { ...productsExist };
-            const allowedProperties = ['title', 'description', 'code', 'price', 'status', 'stock', 'category', 'thumbnails'];
-            // Crear un nuevo objeto solo con las propiedades permitidas
-
-            for (const key of Object.keys(product)) {
-                if (allowedProperties.includes(key)) {
-                    updatedProduct[key] = product[key];
-                 }
-            }
+            productsExist = {...productsExist, ...product}; 
             const newProduct = this.getProducts().filter((product)=> product.id !== Number(idProduct));
-            newProduct.push(updatedProduct); //le pusheo el product actualizado
+            newProduct.push(productsExist); //le pusheo el product actualizado
             await fs.promises.writeFile(this.path, JSON.stringify(newProduct, null, "\t"));
             console.log("se actualizo el producto correctamente "); 
             return productsExist; 

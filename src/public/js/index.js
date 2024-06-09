@@ -48,11 +48,14 @@ socket.on('products',  (products)=>{
     productsList.innerHTML = listaProducts;
 
     const btnEliminar = document.querySelectorAll(".btn-danger");
+
     btnEliminar.forEach((btn)=>{
         btn.addEventListener('click', (e)  => {
-            const id = e.target.parentElement.children[0].innerText;
+            e.preventDefault();
+            const idProd = e.target.parentElement.children[0].innerText;
+            const id = Number(idProd);
             socket.emit("deleteProduct", id);
-            console.log("ìd del eliminar", id);
+            console.log("ìd del eliminar", typeof(id));
     
         });
     
