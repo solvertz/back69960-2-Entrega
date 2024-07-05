@@ -1,15 +1,5 @@
 [
 	{
-		"id": 8,
-		"title": "Coca-cola ",
-		"description": "Cero Azucar",
-		"code": "45A",
-		"price": "1500",
-		"stock": 1,
-		"category": "Almacen",
-		"thumbnails": "coca.img"
-	},
-	{
 		"id": 1,
 		"title": "caramelo cafe",
 		"description": "Cafe premium",
@@ -31,26 +21,6 @@
 		"thumbnails": "tonica.img"
 	},
 	{
-		"id": 7,
-		"title": "caramelo cafe",
-		"description": "Cafe premium",
-		"code": "1235A",
-		"price": 30000,
-		"stock": 20,
-		"category": "golosinas",
-		"thumbnails": "caramelo.img"
-	},
-	{
-		"id": 8,
-		"status": "true",
-		"title": "Mayonesa Natura",
-		"description": "Natura 250gr",
-		"price": "1500",
-		"stock": "3",
-		"category": "Almacen",
-		"code": "mayo33"
-	},
-	{
 		"id": 40,
 		"status": "false",
 		"title": "Yerba Mañanita ",
@@ -69,16 +39,6 @@
 		"stock": "2",
 		"category": "Almacen",
 		"code": "as"
-	},
-	{
-		"id": 42,
-		"status": "false",
-		"title": "njdndnd",
-		"description": "Natura 250gr",
-		"price": "12",
-		"stock": "2",
-		"category": "2j",
-		"code": "jj"
 	},
 	{
 		"id": 43,
@@ -119,16 +79,6 @@
 		"stock": "3",
 		"category": "Almacen",
 		"code": "ñhu"
-	},
-	{
-		"id": 47,
-		"status": "",
-		"title": "ghy",
-		"description": "yyyy",
-		"price": "23",
-		"stock": "3",
-		"category": "Almacen",
-		"code": ""
 	},
 	{
 		"id": 48,
@@ -401,61 +351,6 @@
 		"thumbnails": "caramelo.img"
 	},
 	{
-		"id": 6,
-		"status": true,
-		"title": "Sal",
-		"description": "Dos Anclas ",
-		"code": "1232",
-		"price": 300,
-		"stock": 20,
-		"category": "almacen",
-		"thumbnails": [
-			"sal.img"
-		]
-	},
-	{
-		"id": 7,
-		"status": true,
-		"title": "Sal",
-		"description": "Dos Anclas ",
-		"code": "1232",
-		"price": 300,
-		"stock": 20,
-		"category": "almacen",
-		"thumbnails": [
-			"sal.img"
-		],
-		"sku": 123
-	},
-	{
-		"id": 8,
-		"status": true,
-		"title": "Sal",
-		"description": "Dos Anclas ",
-		"code": "1232",
-		"price": 300,
-		"stock": 20,
-		"category": "almacen",
-		"sku": 123,
-		"thumbnails": [
-			"sal.img"
-		]
-	},
-	{
-		"id": 9,
-		"status": true,
-		"title": "Sal",
-		"description": "Dos Anclas ",
-		"code": "1232",
-		"price": 300,
-		"stock": 20,
-		"category": "almacen",
-		"sku": 123,
-		"thumbnails": [
-			"sal.img"
-		]
-	},
-	{
 		"id": 3,
 		"status": true,
 		"title": "Sal",
@@ -508,92 +403,15 @@
 	},
 	{
 		"id": 6,
-		"title": "fdsf",
-		"description": "sfd",
-		"price": "5",
-		"stock": "6",
+		"title": "jugo Tang ",
+		"description": "Cero Azucar",
+		"code": "tang",
+		"price": 500,
+		"stock": 3,
 		"category": "Almacen",
-		"status": "true",
-		"code": "gfgd"
-	},
-	{
-		"id": 7,
-		"title": "hgjjty",
-		"description": "ghgf",
-		"price": "125",
-		"stock": "3",
-		"category": "Almacen",
-		"status": "false",
-		"code": "475hg"
-	},
-	{
-		"id": 8,
-		"title": "sfsdf",
-		"description": "sdf",
-		"price": "123",
-		"stock": "3",
-		"category": "Almacen",
-		"status": "true",
-		"code": "25k"
-	},
-	{
-		"id": 9,
-		"title": "fsd",
-		"description": "fd",
-		"price": "452",
-		"stock": "3",
-		"category": "Almacen",
-		"status": "true",
-		"code": "ñhu"
-	},
-	{
-		"id": 10,
-		"title": "aaa",
-		"description": "aaa",
-		"price": "444",
-		"stock": "22",
-		"category": "Almacen",
-		"status": "true",
-		"code": "819037"
-	},
-	{
-		"id": 11,
-		"title": "bbb",
-		"description": "bbb",
-		"price": "55",
-		"stock": "5",
-		"category": "Almacen",
-		"status": "false",
-		"code": "asm"
-	},
-	{
-		"id": 12,
-		"title": "ccc",
-		"description": "ccc",
-		"price": "44225",
-		"stock": "25",
-		"category": "Almacen",
-		"status": "true",
-		"code": "25k"
-	},
-	{
-		"id": 13,
-		"title": "ddd",
-		"description": "ddd",
-		"price": "74",
-		"stock": "4",
-		"category": "Almacen",
-		"status": "true",
-		"code": "ñhu"
-	},
-	{
-		"id": 14,
-		"title": "fg",
-		"description": "dfg",
-		"price": "4",
-		"stock": "4",
-		"category": "Almacen",
-		"status": "true",
-		"code": "mayo33"
+		"thumbnails": [
+			"tang.img"
+		],
+		"status": true
 	}
 ]

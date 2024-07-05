@@ -21,7 +21,8 @@ form.onsubmit = (e) =>{
         stock,
         category,
         status,
-        code
+        code,
+        
     };
     socket.emit("newProduct", product);
     form.reset();
@@ -32,7 +33,7 @@ socket.on('products',  (products)=>{
     products.forEach((prod) => {
         listaProducts += `
         <div class="card-body">
-            <h3 class="card-text">ID: ${prod.id}</h3>
+            <h3 class="card-text">ID: ${prod._id}</h3>
             <h5 class="card-title">TITULO: ${prod.title}</h5>
             <h4 class="card-text">PRECIO: $ ${prod.price}</h4>
             <p class="card-text">DESCRIPCIÓN: ${prod.description}</p>
@@ -40,27 +41,19 @@ socket.on('products',  (products)=>{
             <p class="card-text"> CATEGORIA:${prod.category}</p>
             <p class="card-text">ESTADO: ${prod.status}</p>
             <p class="card-text">CÓDIGO: ${prod.code}</p>
+            <p class="card-text">CÓDIGO: ${prod.thumbnail}</p>
 
-            <button type="button"  class="btn btn-danger">eliminar</button>
+            <button type="button"  class="btn btn-danger" onclick="eliminarProducto(${prod._id})">eliminar</button>
         </div>`;
         
     });
     productsList.innerHTML = listaProducts;
-
-    const btnEliminar = document.querySelectorAll(".btn-danger");
-
-    btnEliminar.forEach((btn)=>{
-        btn.addEventListener('click', (e)  => {
-            e.preventDefault();
-            const idProd = e.target.parentElement.children[0].innerText;
-            const id = Number(idProd);
-            socket.emit("deleteProduct", id);
-            console.log("ìd del eliminar", typeof(id));
-    
-        });
-    
-    });
-
 });
 
+function eliminarProducto(_id){
+    socket.emit("deleteProduct", _id);
+    console.log("id del eliminar", (_id));
+}; 
 
+
+    

@@ -1,20 +1,60 @@
-<h2>Hola soy el home y tengo q renderizar la lista de prod </h2>
+<h2>LISTA DE PRODUCTOS </h2>
 
-{{#if products.length }}
-    {{#each products }} 
-    <div class="container ">   
-        <p>ID: {{this.id}}</p>
-        <p>Title: {{this.title}}</p>
-        <p>Price: $ {{this.price}}</p>
-        <p>Description: {{this.description}} </p>
-        <p>Stock: {{this.stock}}</p>
-        <p>Thumbnails: {{this.thumbnails}}</p>
-        <p>Status: {{this.status}}</p>
-        <p>Code: {{this.code}}</p>
-        
-    </div>
-    {{/each}}
-{{else}}
-    <p>No hay productos</p>
-    
-{{/if}}
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"> ID </th>
+        <th scope="col"> Title </th>
+        <th scope="col"> Description </th>
+        <th scope="col"> Code </th>
+        <th scope="col"> Price </th>
+        <th scope="col"> Stock </th>
+        <th scope="col"> Status </th>
+        <th scope="col"> Thumbnails </th>
+      </tr>
+    </thead>
+    <tbody>
+        {{#if products.length }}
+            {{#each products.docs}}  
+                <tr>
+                <td> {{this._id}}</td>   
+                <td> {{this.title}}</td>
+                <td> {{this.description}}</td>
+                <td> {{this.code}} </td>
+                <td>$ {{this.price}} </td>
+                <td>{{this.stock}}</td>
+                <td>{{this.status}}</td>
+                <td>{{this.thumbnails}}</td>
+                <button id="button-create" onclick="addToCart(`{{this._id}}`)">Agregar al carrito</button>
+                </tr>
+            {{/each}}
+            {{else}}
+                <tr>NO HAY PRODUCTOS!</tr>
+        {{/if}}
+    </tbody>
+
+  </table>
+ <nav aria-label="Page navigation example">
+  <ul class="pagination">
+    {{#if products.hasPrevPage}}
+      <li class="page-item">
+        <a class="page-link" href="/products?page={{products.prevPage}}&&limit=10">
+        Previous 
+        </a>
+      </li>
+    {{/if}}
+    {{#if products.hasNextPage}}
+    <li class="page-item">
+      <a class="page-link" href="/products?page={{products.nextPage}}&&limit=10">
+      Next
+      </a>
+    </li>
+    {{/if}}
+  </ul>
+</nav>
+<p class="btn btn-primary">
+  current Page: {{products.page}}
+</p>
+
+</div>

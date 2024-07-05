@@ -21,13 +21,16 @@
 .card-body{
     background-color: #24303c;
     border-radius: 5px;
-    padding: 30px;
+    padding: 10px;
     margin: auto;
     width: 400px;
     margin-top: 100px;
     color: white; 
     font-family: 'calibri';
     box-shadow: 7px 13px 37px #000;
+
+   
+  
 
    
 
@@ -46,6 +49,11 @@
     cursor: pointer;
     font-size: 10px  
 }
+
+
+  
+   
+
 
 
 
