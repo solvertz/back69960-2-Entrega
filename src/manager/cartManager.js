@@ -2,7 +2,7 @@ import fs from 'fs';
 
 import ProductManager from './productManager.js';
 const manager = new ProductManager("./src/data/products.json")
-//console.log(manager); 
+
 
 export default class CartManager {
     constructor (path){
@@ -67,7 +67,7 @@ export default class CartManager {
         }
     
     }
-// ver el uso del find ya que tengo que buscar en carts la propiedad products 
+
     async addProductToCart(idCart, idProduct){
         console.log(idProduct, idCart);
         try { //verifico si el carrito y el producto existen 

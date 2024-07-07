@@ -52,30 +52,7 @@ export default class CartBDManager {
             throw new Error(error);
         }
     }
-    
  
-    //PUT api/carts/:cid/products/:pid
-    // funciona agregar un producto al carrito, si lo quiero volver a agregar no funciona 
-   /*   async addProductToCart(idCart, idProduct){
-
-        try {
-            const productExists = await this.existProdInCart(idCart, idProduct);
-            console.log(productExists);
-            if(productExists){
-                return await CartModel.findByIdAndUpdate({_id : idCart, 'products.product': idProduct},
-                    { $inc: { 'products.$.quantity': productExists.products[0].quantity +1 } },
-                    
-                    {new: true}
-                );
-
-            }else{
-                return await CartModel.findByIdAndUpdate(idCart, { $push: { products: { product: idProduct, quantity: 1 } } }, {new: true});
-            }
-           
-        } catch (error) {
-            throw new Error(error);
-        }
-    }  */ 
         //PUT api/carts/:cid/products/:pid ✔️​
          async addProductToCart(idCart, idProduct) {
             try {
@@ -146,22 +123,6 @@ export default class CartBDManager {
             throw new Error(error.message);
         }
     } 
-
-  /*   //actualizar el Quantity
-    //PUT api/carts/:cid/products/:pid
-    async updateQuantityProductInCart(idCart, idProduct, quantity){
-        try {
-            const cart = await CartModel.findById(idCart);
-            if(cart){
-                return await CartModel.findByIdAndUpdate(idCart, { $set: { 'products.$.quantity': quantity } },
-                { new: true} );
-            }else  throw new Error('El producto no está en el carrito.');
-            
-            
-        } catch (error) {
-            throw new Error(error);
-        }
-    } */
 
     //DELETE api/cart/:cid/clear  ✔️​  
     async clearCart(idCart){
