@@ -24,7 +24,7 @@ const app = express();
 
 
 async function main() {
-    await mongoose.connect('mongodb+srv://SoniaVertz24:250305Sol@cluster0.7cbswsw.mongodb.net/entregaFinal')
+    await mongoose.connect('mongodb+srv://SoniaVertz24Sol@cluster0.7cbswsw.mongodb.net/entregaFinal')
 }
 main(); 
 
