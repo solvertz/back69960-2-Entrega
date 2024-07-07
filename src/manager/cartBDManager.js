@@ -15,7 +15,7 @@ export default class CartBDManager {
     //GET api/carts/cid  ✔️​
     async getCartById(id){
         try {
-            const cart = await CartModel.findById(id);
+            const cart = await CartModel.findById(id).populate('products.product');
             if(!cart) throw new Error("El carrito no existe");
             return cart;
         } catch (error) {

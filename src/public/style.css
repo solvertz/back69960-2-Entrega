@@ -5,6 +5,11 @@
     font-family:'Times New Roman', Times, serif;
 }
 
+body{
+    margin: 30px;
+    padding: 10px;
+}
+
 
 
 .container{ 
@@ -48,6 +53,14 @@
     margin-top: 20px;
     cursor: pointer;
     font-size: 10px  
+}
+
+#button-create{
+    background-color: rgb(15, 136, 4);
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 10px;
+
 }
 
 

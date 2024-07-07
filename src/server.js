@@ -2,7 +2,9 @@ import express from 'express';
 import productsRouter from './routes/products.router.js';
 import cartsRouter from './routes/carts.router.js';
 import handlebars  from 'express-handlebars';
+import Handlebars from 'handlebars'
 import viewRouter from './routes/view.router.js'
+
 import { __dirname } from './path.js'; 
 import { Server } from 'socket.io'
 import { mongoose } from 'mongoose';
@@ -14,10 +16,12 @@ const productManager = new ProductManager("./src/data/products.json"); */
 import ProductDBManager from './manager/productDBManager.js'
 const productManager = new ProductDBManager();  
 console.log(productManager.getProducts());
-console.log(productManager);
+//console.log(productManager);
+import {ProductModel} from './manager/model/product.model.js'
 
 
 const app = express();
+
 
 async function main() {
     await mongoose.connect('')
@@ -32,13 +36,11 @@ app.use("/api/cart", cartsRouter);
 app.use("/api/products", productsRouter)
 
 // Configuración de Handlebars
-/* const hbs = handlebars.create({
+app.engine('handlebars', handlebars.engine({
     defaultLayout: 'main', // Esto es opcional si no estás utilizando un diseño principal
     extname: '.handlebars', // Extensión de archivo para tus vistas
-    handlebars: allowInsecurePrototypeAccess(handlebars)
-}); */
-
-app.engine('handlebars', handlebars.engine()); //configuración de hds 
+    handlebars: allowInsecurePrototypeAccess(Handlebars),
+})); 
 app.set('view engine', 'handlebars'); //mor de plantilla a utilizar 
 app.set('views', `${__dirname}/views`); // ubicación de la carpeta para las vistas 
 

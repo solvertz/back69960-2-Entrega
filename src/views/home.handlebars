@@ -12,26 +12,25 @@
         <th scope="col"> Stock </th>
         <th scope="col"> Status </th>
         <th scope="col"> Thumbnails </th>
+        <th scope="col"> Carrito </th>
+        
       </tr>
     </thead>
     <tbody>
-        {{#if products.length }}
-            {{#each products.docs}}  
-                <tr>
-                <td> {{this._id}}</td>   
-                <td> {{this.title}}</td>
-                <td> {{this.description}}</td>
-                <td> {{this.code}} </td>
-                <td>$ {{this.price}} </td>
-                <td>{{this.stock}}</td>
-                <td>{{this.status}}</td>
-                <td>{{this.thumbnails}}</td>
-                <button id="button-create" onclick="addToCart(`{{this._id}}`)">Agregar al carrito</button>
-                </tr>
-            {{/each}}
-            {{else}}
-                <tr>NO HAY PRODUCTOS!</tr>
-        {{/if}}
+          {{#each products.docs}}  
+              <tr>
+              <td> {{this._id}}</td>   
+              <td> {{this.title}}</td>
+              <td> {{this.description}}</td>
+              <td> {{this.category}}</td>
+              <td> {{this.code}} </td>
+              <td>$ {{this.price}} </td>
+              <td>{{this.stock}}</td>
+              <td>{{this.status}}</td>
+              <td>{{this.thumbnails}}</td>
+              <td><button id="button-create" onclick="addToCart(`{{this._id}}`)">Agregar al carrito</button></td>
+              </tr>
+          {{/each}}     
     </tbody>
 
   </table>
@@ -39,14 +38,14 @@
   <ul class="pagination">
     {{#if products.hasPrevPage}}
       <li class="page-item">
-        <a class="page-link" href="/products?page={{products.prevPage}}&&limit=10">
+        <a class="page-link" href="/products?page={{products.prevPage}}&&limit=2">
         Previous 
         </a>
       </li>
     {{/if}}
     {{#if products.hasNextPage}}
     <li class="page-item">
-      <a class="page-link" href="/products?page={{products.nextPage}}&&limit=10">
+      <a class="page-link" href="/products?page={{products.nextPage}}&&limit=2">
       Next
       </a>
     </li>
