@@ -29,8 +29,12 @@ form.onsubmit = (e) =>{
 };
 
 socket.on('products',  (products)=>{
+    renderProducts(products);
+});
+
+function renderProducts(products) {
     let listaProducts = "";
-    products.forEach((prod) => {
+    products.docs.forEach(prod => {
         listaProducts += `
         <div class="card-body">
             <h3 class="card-text">ID: ${prod._id}</h3>
@@ -42,13 +46,11 @@ socket.on('products',  (products)=>{
             <p class="card-text">ESTADO: ${prod.status}</p>
             <p class="card-text">CÓDIGO: ${prod.code}</p>
             <p class="card-text">CÓDIGO: ${prod.thumbnail}</p>
-
-            <button type="button"  class="btn btn-danger" onclick="eliminarProducto(${prod._id})">eliminar</button>
+            <button type="button" class="btn btn-danger" onclick="eliminarProducto('${prod._id}')">eliminar</button>
         </div>`;
-        
     });
     productsList.innerHTML = listaProducts;
-});
+}
 
 function eliminarProducto(_id){
     socket.emit("deleteProduct", _id);

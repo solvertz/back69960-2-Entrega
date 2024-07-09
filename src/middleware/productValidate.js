@@ -1,8 +1,8 @@
 export const productValidator = (req, res, next) => {
-    const { title, description, code, price, stock, category, thumbnails } = req.body;
+    const { title, description, code, price, stock, category, thumbnail } = req.body;
 
     // Propiedades esperadas para un producto
-    const expectedProperties = ['title', 'description', 'code', 'price', 'stock', 'category', 'thumbnails'];
+    const expectedProperties = ['title', 'description', 'code', 'price', 'stock', 'category', 'thumbnail'];
 
     // Verificar que no existan propiedades adicionales
     for (const key in req.body) {
@@ -19,7 +19,7 @@ export const productValidator = (req, res, next) => {
             price === undefined || 
             stock === undefined ||
             category === undefined ||
-            thumbnails === undefined) {
+            thumbnail === undefined) {
                 return res.status(400).json({ msg: "Ingresar todos los datos" });
         }
 
@@ -36,7 +36,7 @@ export const productValidator = (req, res, next) => {
         (price !== undefined && typeof price !== 'number') ||
         (stock !== undefined && typeof stock !== 'number') ||
         (category !== undefined && typeof category !== 'string') ||
-        (thumbnails !== undefined && !Array.isArray(thumbnails))) {
+        (thumbnail !== undefined && !Array.isArray(thumbnail))) {
             return res.status(400).json({ msg: "Tipos de datos incorrectos" });
     }
 

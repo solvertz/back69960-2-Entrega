@@ -15,16 +15,34 @@ const productManager = new ProductManager("./src/data/products.json"); */
 
 import ProductDBManager from './manager/productDBManager.js'
 const productManager = new ProductDBManager();  
-console.log(productManager.getProducts());
-//console.log(productManager);
-import {ProductModel} from './manager/model/product.model.js'
+
+
+async function fetchProducts() {
+    try {
+        const products = await productManager.getProducts();
+        console.log(products);
+    } catch (error) {
+        console.error('Error fetching products:', error);
+    }
+}
+
+fetchProducts(); 
+/* productManager.getProducts()
+    .then(products => {
+        console.log(products);
+    })
+    .catch(error => {
+        console.error('Error fetching products:', error);
+    }); */
 
 
 const app = express();
 
 
 async function main() {
-    await mongoose.connect('mongodb+srv://SoniaVertz24Sol@cluster0.7cbswsw.mongodb.net/entregaFinal')
+    await mongoose.connect('mongodb+srv://SoniaVertz24:Sol@cluster0.7cbswsw.mongodb.net/entregaFinal')
+    .then(()=> console.log("Conectado a la base de datos"))
+    .catch(err => console.log(err));
 }
 main(); 
 
@@ -59,7 +77,7 @@ const socketServer = new Server(httpServer);
 socketServer.on('connection', async(socket) => {
     
     console.log(`Nuevo usuario conectado:  ${socket.id}`);
-    socket.emit('products', await productManager.getProducts());
+    socket.emit('products', fetchProducts());
     
     
     socket.on('newProduct', async(product) => {

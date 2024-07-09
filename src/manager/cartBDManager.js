@@ -2,7 +2,7 @@ import { CartModel } from "./model/cart.model.js";
 
 export default class CartBDManager {
     
-    //GET api/carts
+    //GET api/cart ✔️​
     async getCarts(){
         try {
             return await CartModel.find({});
@@ -12,7 +12,7 @@ export default class CartBDManager {
         
     }
 
-    //GET api/carts/cid  ✔️​
+    //GET api/cart/cid  ✔️​
     async getCartById(id){
         try {
             const cart = await CartModel.findById(id).populate('products.product');
@@ -42,42 +42,31 @@ export default class CartBDManager {
         }
     }
 
-    async existProdInCart(idCart, idProduct){
+    //PUT api/cart/:cid/products/:pid ✔️​
+    async addProductToCart(idCart, idProduct) {
         try {
-            return await CartModel.findOne({
-                _id: idCart,
-                products: { $elemMatch: {product: idProduct}}
-            });
-        } catch (error) {
-            throw new Error(error);
-        }
-    }
- 
-        //PUT api/carts/:cid/products/:pid ✔️​
-         async addProductToCart(idCart, idProduct) {
-            try {
-                const cart = await CartModel.findById(idCart);
-                if (!cart) {
-                    throw new Error('El carrito no existe');
-                }
-        
-                const productIndex = cart.products.findIndex(p => p.product.toString() === idProduct);
-                
-                if (productIndex > -1) {
-                    // Producto existe, incrementar la cantidad
-                    cart.products[productIndex].quantity += 1;
-                } else {
-                    // Producto no existe, agregar nuevo producto
-                    cart.products.push({ product: idProduct, quantity: 1 });
-                }
-        
-                await cart.save();
-                return cart;
-        
-            } catch (error) {
-                throw new Error(error.message);
+            const cart = await CartModel.findById(idCart);
+            if (!cart) {
+                throw new Error('El carrito no existe');
             }
-        }  
+
+            const productIndex = cart.products.findIndex(p => p.product.toString() === idProduct);
+            
+            if (productIndex > -1) {
+                // Producto existe, incrementar la cantidad
+                cart.products[productIndex].quantity += 1;
+            } else {
+                // Producto no existe, agregar nuevo producto
+                cart.products.push({ product: idProduct, quantity: 1 });
+            }
+
+            await cart.save();
+            return cart;
+
+        } catch (error) {
+            throw new Error(error.message);
+        }
+}  
 
     //DELETE api/carts/:cid/products/:pid  ✔️​
     //eliminar del carrito el producto seleccionado 

@@ -14,7 +14,7 @@ router.get("/products", async(req, res) => {
     const {page, limit} = req.query;
     try{
         const products = await ProductModel.paginate({}, { page, limit });
-        console.log(products); 
+       console.log(products)
         res.render("home", {products}); 
 
     } catch (error) {
@@ -24,7 +24,7 @@ router.get("/products", async(req, res) => {
     
 })
 
-router.get("/realtimeProducts", (req, res) => {
+router.get("/realtimeProducts", async (req, res) => {
     res.render("realTimeProducts"); 
 })
 
